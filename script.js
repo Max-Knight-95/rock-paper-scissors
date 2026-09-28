@@ -32,7 +32,31 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+//Create function tp play a single round
 
+function playRound(humanChoice, computerChoice) {
+    if(((humanChoice === 'rock') && (computerChoice === "scissors")) || 
+       ((humanChoice === 'scissors') && (computerChoice === 'paper')) ||
+       ((humanChoice === 'paper') && (computerChoice === 'rock'))
+    ) {
+        humanScore += 1;
+        return "You win!"
+    } else if(((computerChoice === 'rock') && (humanChoice === "scissors")) || 
+       ((computerChoice === 'scissors') && (humanChoice === 'paper')) ||
+       ((computerChoice === 'paper') && (humanChoice === 'rock'))
+    ) {
+        computerScore += 1;
+        return "Computer wins!"
+    } else if(humanChoice === computerChoice) {
+        return "Game was a tie!"
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+
+console.log(playRound(humanSelection, computerSelection))
 
 
 
