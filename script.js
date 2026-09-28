@@ -27,5 +27,12 @@ function getHumanChoice() {
     }
 }
 
+//Create global variables to record the score
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+
 
 
