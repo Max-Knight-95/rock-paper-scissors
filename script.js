@@ -29,12 +29,17 @@ function getHumanChoice() {
 
 //Create global variables to record the score
 
-let humanScore = 0;
-let computerScore = 0;
 
 //Create function tp play a single round
 
-function playRound(humanChoice, computerChoice) {
+
+//Create a function to play 5 rounds and declare a winner
+
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice, computerChoice) {
     if(((humanChoice === 'rock') && (computerChoice === "scissors")) || 
        ((humanChoice === 'scissors') && (computerChoice === 'paper')) ||
        ((humanChoice === 'paper') && (computerChoice === 'rock'))
@@ -52,11 +57,40 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    console.log(playRound(humanSelection, computerSelection))
+    console.log(`Score | human ${humanScore} | computer ${computerScore}`);
+    
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(playRound(humanSelection, computerSelection))
+    console.log(`Score | human ${humanScore} | computer ${computerScore}`);
+    
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(playRound(humanSelection, computerSelection))
+    console.log(`Score | human ${humanScore} | computer ${computerScore}`);
+    
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(playRound(humanSelection, computerSelection))
+    console.log(`Score | human ${humanScore} | computer ${computerScore}`);
+    
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(playRound(humanSelection, computerSelection))
+    console.log(`Score | human ${humanScore} | computer ${computerScore}`);
 
+    if(humanScore > computerScore) {
+        return "You win the game!"
+    } else if(computerScore > humanScore) {
+        return "Computer wins the game!"
+    } else if(humanScore === computerScore) {
+        return "Game was a tie! Play again."
+    }
+}
 
-console.log(playRound(humanSelection, computerSelection))
-
+console.log(playGame())
 
 
