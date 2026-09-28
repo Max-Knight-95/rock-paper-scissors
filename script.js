@@ -14,3 +14,18 @@ function getComputerChoice() {
         return "scissors"
     }
 }
+
+//Create next function. This will take the human answer.
+
+function getHumanChoice() {
+    let human = prompt("Please give an answer");
+    human = human.toLowerCase().trim();
+    if((human === 'rock') || (human === 'scissors') || (human === 'paper')) {
+        return human
+    } else {
+        return "Invalid answer. Please try again."
+    }
+}
+
+
+
